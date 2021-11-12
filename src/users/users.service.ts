@@ -19,7 +19,10 @@ export class UsersService {
     },
   ];
 
-  getUsers(): any {
+  getUsers(name?: string): User[] {
+    if (name) {
+      return this.users.filter((user) => user.name === name);
+    }
     return this.users;
   }
 
